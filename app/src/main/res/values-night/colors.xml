@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="c_main_therme">#262626</color>
+    <color name="c_indirect_therme">#8c8c8c</color>
+    <color name="c_alt_therme">#b3b3b3</color>
+
+    <color name="c_main_font">#f2f2f2</color>
+
+
+    <color name="purple_1">#FFBB86FC</color>
+    <color name="purple_2">#FF6200EE</color>
+    <color name="purple_3">#FF3700B3</color>
+
+    <color name="pink_1">#ff99ff</color>
+    <color name="pink_2">#ff00ff</color>
+    <color name="pink_3">#b300b3</color>
+
+    <color name="red_1">#ff4d4d</color>
+    <color name="red_2">#ff0000</color>
+    <color name="red_3">#990000</color>
+
+    <color name="yell_1">#ffff80</color>
+    <color name="yell_2">#ffff00</color>
+    <color name="yell_3">#b3b300</color>
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
