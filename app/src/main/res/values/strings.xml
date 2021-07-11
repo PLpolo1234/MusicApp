@@ -2,4 +2,7 @@
     <string name="app_name">Music App</string>
     <string name="D_M">Enable Dark Mode</string>
     <string name="text">Yes</string>
+
+    <string name="Menu">MENU</string>
+
 </resources>
