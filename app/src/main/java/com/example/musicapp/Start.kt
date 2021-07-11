@@ -13,7 +13,7 @@ class Start : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
-        recy_view_navi_view_1.layoutManager = GridLayoutManager(this, 3)
+        recy_view_navi_view_1.layoutManager = GridLayoutManager(this, 2)
         recy_view_navi_view_1.adapter = navi_view_recy_view_2_adapter()
 
 
