@@ -8,14 +8,28 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicapp.R
 import kotlinx.android.synthetic.main.menu_recy_view_2.view.*
-import java.io.IOException
 
 class navi_view_recy_view_2_adapter: RecyclerView.Adapter<MyViewHolder>()
 {
+
+    private lateinit var mListener : onItemClickListener
+
+    interface onItemClickListener
+    {
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener)
+    {
+        mListener = listener
+    }
+
+
+
     override fun onCreateViewHolder(viewgroup: ViewGroup, id: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(viewgroup.context)
         val menu_p = layoutInflater.inflate(R.layout.menu_recy_view_2, viewgroup, false)
-        return MyViewHolder(menu_p)
+        return MyViewHolder(menu_p, mListener)
     }
 
     val TAG: String = "TAG"
@@ -51,4 +65,14 @@ class navi_view_recy_view_2_adapter: RecyclerView.Adapter<MyViewHolder>()
         //return  32
     }
 }
-class MyViewHolder(val view: View): RecyclerView.ViewHolder(view)
+class MyViewHolder(val view: View, listener: navi_view_recy_view_2_adapter.onItemClickListener): RecyclerView.ViewHolder(view)
+{
+
+    init {
+        view.setOnClickListener{
+
+            listener.onItemClick(adapterPosition)
+
+        }
+    }
+}

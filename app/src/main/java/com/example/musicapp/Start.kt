@@ -13,17 +13,25 @@ class Start : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
+        val adater = navi_view_recy_view_2_adapter()
         recy_view_navi_view_1.layoutManager = GridLayoutManager(this, 2)
-        recy_view_navi_view_1.adapter = navi_view_recy_view_2_adapter()
 
-
-
-        u1.setOnClickListener(View.OnClickListener {
-
-            val sett: Intent = Intent(applicationContext, Settings::class.java)
-            startActivity(sett)
-
+        recy_view_navi_view_1.adapter = adater
+        adater.setOnItemClickListener(object : navi_view_recy_view_2_adapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                if (position == 0){}
+                if (position == 1){}
+                if (position == 2){}
+                if (position == 3){
+                    val sett: Intent = Intent(applicationContext, Settings::class.java)
+                    startActivity(sett)
+                }
+            }
         })
+
+
+
+
 
     }
 }

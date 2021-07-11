@@ -17,6 +17,7 @@ object Menu_database_1
         "@drawable/the_last",
         "@drawable/heart_ico",
         "@drawable/playlist_ico",
-        "@mipmap/kiepski_round"
+        "@drawable/settings_ico",
+        "@drawable/info_ico"
     )
 }
