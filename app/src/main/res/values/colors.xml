@@ -6,6 +6,8 @@
 
     <color name="c_main_font">#262626</color>
 
+    <color name="lines_dots">#808080</color>
+
 
     <color name="purple_1">#FFBB86FC</color>
     <color name="purple_2">#FF6200EE</color>

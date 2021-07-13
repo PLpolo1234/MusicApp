@@ -7,6 +7,10 @@
     <color name="c_main_font">#f2f2f2</color>
 
 
+    <color name="lines_dots">#4c4c4c</color>
+
+
+
     <color name="purple_1">#FFBB86FC</color>
     <color name="purple_2">#FF6200EE</color>
     <color name="purple_3">#FF3700B3</color>

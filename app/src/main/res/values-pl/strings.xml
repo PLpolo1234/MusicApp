@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Muzyka</string>
+
+
+    /Menu
+    <string name="No_more">Wincej tego ni mili</string>
+
+    <string name="Menu">MENU</string>
+    <string name="The_lasts">Ostatnie</string>
+    <string name="Loved">Ulubionne</string>
+    <string name="Playlist">Playlisty</string>
+    <string name="Settings">Ustawienia</string>
+    <string name="Info">Informacje</string>
+
+    <string name="Version">Wersja</string>
+
+    <string name="dark_mode">Tryb ciemny</string>
+
+</resources>

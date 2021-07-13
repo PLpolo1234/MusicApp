@@ -1,11 +1,24 @@
 <resources>
-    <string name="app_name">Music App</string>
-    <string name="D_M">Enable Dark Mode</string>
-    <string name="text">Yes</string>
+    <string name="app_name">Music</string>
 
-    <string name="Menu">MENU</string>
 
     /Menu
+    <string name="No_more">"There was no more?"</string>
+
+    <string name="Menu">MENU</string>
+    <string name="The_lasts">Lasts</string>
+    <string name="Loved">Loved</string>
+    <string name="Playlist">Playlists</string>
+    <string name="Settings">Settings</string>
+    <string name="Info">Info</string>
+
+    <string name="Version">Version</string>
+    <string name="vernumb" translatable="false">1.0.0.0.3</string>
+
+
+    //settings
+    <string name="dark_mode">Dark Mode</string>
+
 
 
 </resources>
