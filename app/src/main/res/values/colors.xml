@@ -2,7 +2,10 @@
 <resources>
     <color name="c_main_therme">#e5e5e5</color>
     <color name="c_indirect_therme">#ececec</color>
+
     <color name="c_alt_therme">#b3b3b3</color>
+
+    <color name="c_a_top_therme">#b3b3b3</color>
 
     <color name="c_main_font">#262626</color>
 

@@ -57,7 +57,7 @@ class navi_view_racy_view_2_adapter: RecyclerView.Adapter<MyViewHolder>()
             if(position==2){ menu_texts_1 = context_name.getString(R.string.Playlist)}
             if(position==3){ menu_texts_1 = context_name.getString(R.string.Settings)}
             if(position==4){ menu_texts_1 = context_name.getString(R.string.Info)}
-
+            if(position==5){ menu_texts_1 = context_name.getString(R.string.Thisk_list)}
             name.text = menu_texts_1
 
         }catch (e: java.lang.IndexOutOfBoundsException){
@@ -76,7 +76,7 @@ class navi_view_racy_view_2_adapter: RecyclerView.Adapter<MyViewHolder>()
     }
 
     override fun getItemCount(): Int {
-        return meda_1.size
+        return meda_1.size+1
         //return  2
     }
 }

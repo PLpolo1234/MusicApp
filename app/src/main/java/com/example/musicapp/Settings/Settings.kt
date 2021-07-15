@@ -3,8 +3,12 @@ package com.example.musicapp.Settings
 import android.content.ContentValues
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.database.Cursor
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.musicapp.R
@@ -24,6 +28,24 @@ class Settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+
+//        var songCursor: Cursor? = contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+//        null,null,null,null)
+//
+//        while (songCursor!=null && songCursor.moveToNext()){
+//            var songName = songCursor.getString(songCursor.getColumnIndex(MediaStore.Audio.Media.TITLE))
+//            var songAuthor = songCursor.getString(songCursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))
+//
+//        }
+
+
+
+        back_bt.setOnClickListener {
+            onBackPressed()
+        }
+
+
 
         preferencesProvider = SharedPreferencesHelper(applicationContext)
         if(preferencesProvider.getBoolean(Constans.DARK_MODE)){
@@ -51,33 +73,5 @@ class Settings : AppCompatActivity() {
         super.onResume()
         Log.d("TAG","onResume hehehe")
     }
-
-
-    //fun saveData(){
-    //    val sharedPreferences: SharedPreferences = this.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE)
-    //    val editor: SharedPreferences.Editor = sharedPreferences.edit()
-//
-    //    editor.putBoolean(DARK_MODE, night_mode.isChecked())
-    //    editor.apply()
-    //}
-//
-    //fun loadData(){
-    //    val sharedPreferences: SharedPreferences = this.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE)
-    //    setting_dark_mode = sharedPreferences.getBoolean(DARK_MODE, false)
-    //}
-//
-    //fun updateView(){
-    //    night_mode.isChecked = setting_dark_mode
-    //    if (setting_dark_mode==true){
-    //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-    //    }
-    //    if (setting_dark_mode==false){
-    //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-    //    }
-    //}
-
-
-
-
 
 }

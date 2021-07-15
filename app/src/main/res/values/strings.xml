@@ -11,9 +11,11 @@
     <string name="Playlist">Playlists</string>
     <string name="Settings">Settings</string>
     <string name="Info">Info</string>
+    <string name="Thisk_list">TTDI</string>
 
     <string name="Version">Version</string>
-    <string name="vernumb" translatable="false">1.0.0.0.3</string>
+    <string name="vernumb" translatable="false">1.0.0.5</string>
+
 
 
     //settings
