@@ -2,8 +2,10 @@ package com.example.musicapp.Start
 
 import android.content.Context
 import android.content.Intent
+import android.database.Cursor
 import android.os.Bundle
 import android.os.Environment
+import android.provider.MediaStore
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -18,6 +20,7 @@ import com.example.musicapp.R
 import com.example.musicapp.Settings.Settings
 import com.example.musicapp.SharedPreferences.Constans
 import com.example.musicapp.SharedPreferences.SharedPreferencesHelper
+import com.example.musicapp.Start.Models.SongModel
 import com.example.musicapp.baza_danych.navi_view_racy_view_2_adapter
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
@@ -30,14 +33,13 @@ import com.karumi.dexter.listener.single.PermissionListener
 
 
 
-class Start : AppCompatActivity(), PermissionListener{
+class Start : AppCompatActivity(), PermissionListener {
 
     private lateinit var preferencesProvider: SharedPreferencesHelper
 
-    lateinit var items: ArrayList<String>
-    //public var abcd = 1
+    //lateinit var items: ArrayList<String>
+    var songModelData:ArrayList<SongModel> = ArrayList()
     var listView: ListView? = null
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +47,7 @@ class Start : AppCompatActivity(), PermissionListener{
         setContentView(R.layout.activity_start)
 
         runtimePermission()
+        Songsss_list_and_more()
 
 
         preferencesProvider = SharedPreferencesHelper(applicationContext)
@@ -68,17 +71,12 @@ class Start : AppCompatActivity(), PermissionListener{
         recy_view_navi_view_1.layoutManager = GridLayoutManager(this, 2)
         recy_view_navi_view_1.adapter = adater
 
-        displaySong()
+        //displaySong()
 
 
         //ustawienie click listenera dla recycler view
         adater.setOnItemClickListener(object : navi_view_racy_view_2_adapter.onItemClickListener {
             override fun onItemClick(position: Int) {
-
-                //val context: Context = layout_menu_1.getContext()
-                //val id: Int = context.getResources().getIdentifier("@drawable/circle_of_pain_clicked", "drawable", context.getPackageName())
-                //layout_menu_1.setBackgroundResource(id)
-
 
                 //-----------------------------------------------------------------------
 
@@ -125,7 +123,7 @@ class Start : AppCompatActivity(), PermissionListener{
     }
 
     override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
-
+        Songsss_list_and_more()
     }
 
     override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
@@ -143,37 +141,24 @@ class Start : AppCompatActivity(), PermissionListener{
             .check()
     }
 
-    fun findSong(file: File): ArrayList<File>? {
-        val arrayList: ArrayList<File> = ArrayList()
-        val files: Array<File> = file.listFiles()
-        for (singleFile in files) {
-            if (singleFile.isDirectory && !singleFile.isHidden) {
-                arrayList.addAll(findSong(singleFile)!!)
-            } else {
-                if (singleFile.name.endsWith(".mp3") || singleFile.name
-                        .endsWith(".wav")
-                ) {
-                    arrayList.add(singleFile)
-                }
-            }
-        }
-        return arrayList
-    }
+    fun Songsss_list_and_more(){
+        var songCursor: Cursor? = contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        null,null,null,null)
 
-    fun displaySong() {
-
-        val mySong = findSong(Environment.getExternalStorageDirectory())
-        items = ArrayList<String>(mySong?.size!!)
-        for (i in mySong!!.indices) {
-            items[i] = mySong!![i].name.toString().replace(".mp3", "").replace(".wav", "")
+        while (songCursor!=null && songCursor.moveToNext()){
+            var songName = songCursor.getString(songCursor.getColumnIndex(MediaStore.Audio.Media.TITLE))
+            songModelData.add(SongModel(songName))
         }
 
-        val adater_music_lis = Music_revi_adapter(items)
+        val adater_music_lis = Music_revi_adapter(songModelData)
         listView_songs.layoutManager = LinearLayoutManager(this)
         listView_songs.adapter = adater_music_lis
+
     }
 
-
 }
+
+
+
 
 
